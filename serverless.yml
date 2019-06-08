@@ -1,0 +1,25 @@
+service: ssm-params-aurora 
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  iamManagedPolicies:
+    - arn:aws:iam::aws:policy/AmazonSSMFullAccess
+    - arn:aws:iam::aws:policy/AmazonRDSFullAccess
+  vpc:
+    securityGroupIds:
+      - ${ssm:SECURITY_GROUP_1}
+    subnetIds:
+      - ${ssm:SUBNET_ID_1}
+      - ${ssm:SUBNET_ID_2}
+      - ${ssm:SUBNET_ID_3}
+
+functions:
+  aurora:
+    handler: aurora.handler
+    events:
+     - http:
+        cors: true
+        path: ssm
+        method: get
+
