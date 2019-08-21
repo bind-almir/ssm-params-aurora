@@ -1,3 +1,3 @@
-**How to use AWS System Manager Parameter Store with serverless framework, VPC and Aurora.
+**How to use AWS System Manager Parameter Store with serverless framework, VPC and Aurora.**
 
-Read more [here](https://www.almirzulic.com/2019/06/08/how-to-use-parameter-store-with-serverless-framework/).
+Read more [here](https://almirzulic.com/posts/how-to-use-parameter-store-with-serverless-framework/).
